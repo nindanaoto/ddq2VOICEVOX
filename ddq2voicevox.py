@@ -36,12 +36,6 @@ def generate_wav(text, speaker=1):
     )
 
     return response2.content
-    # wf = wave.open(filepath, 'wb')
-    # wf.setnchannels(1)
-    # wf.setsampwidth(2)
-    # wf.setframerate(24000)
-    # wf.writeframes(response2.content)
-    # wf.close()
 
-with HTTPServer(('localhost', 8275), VOICEVOXHTTPRequestHandler) as server:
+with HTTPServer(('0.0.0.0', 8275), VOICEVOXHTTPRequestHandler) as server:
     server.serve_forever()
